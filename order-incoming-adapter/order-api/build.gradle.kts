@@ -19,6 +19,11 @@ repositories {
 }
 
 dependencies {
+    implementation(project(":order-common"))
+    implementation(project(":order-domain"))
+    implementation(project(":order-usecase"))
+    implementation(project(":order-outgoing-adapter"))
+
     implementation("org.springframework.boot:spring-boot-starter")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
