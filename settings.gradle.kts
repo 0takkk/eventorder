@@ -1,5 +1,6 @@
+include("order-api")
+include("order-common")
 include("order-domain")
 include("order-usecase")
 include("order-outgoing-adapter")
-include("order-api")
 project(":order-api").projectDir = file("order-incoming-adapter/order-api")

@@ -11,6 +11,8 @@ plugins {
 group = "com.order"
 version = "0.0.1-SNAPSHOT"
 
+// TODO. Gradle Convention
+// https://docs.gradle.org/current/samples/sample_convention_plugins.html
 allprojects {
     apply(plugin = "java")
     apply(plugin = "kotlin")
@@ -24,7 +26,6 @@ allprojects {
             languageVersion = JavaLanguageVersion.of(21)
         }
     }
-
     tasks.compileKotlin {
         compilerOptions {
             freeCompilerArgs = listOf("-Xjsr305=strict")
