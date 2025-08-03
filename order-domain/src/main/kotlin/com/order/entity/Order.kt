@@ -71,4 +71,23 @@ data class Order(
             updatedAt = LocalDateTime.now(),
         )
     }
+
+    companion object {
+        fun of(
+            userId: UserId,
+            productId: ProductId,
+            amount: Money,
+        ): Order {
+            val now = LocalDateTime.now()
+            return Order(
+                id = OrderId(0L),
+                userId = userId,
+                productId = productId,
+                status = OrderStatus.CREATED,
+                amount = amount,
+                createdAt = now,
+                updatedAt = now,
+            )
+        }
+    }
 }
