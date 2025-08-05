@@ -8,11 +8,7 @@ class CreateOrderCommand(
     private val orderRepository: OrderRepository,
 ) : CreateOrderCommandUseCase {
     override fun invoke(command: CreateOrderCommandUseCase.Command): Order {
-        val order = Order.of(
-            userId = command.userId,
-            productId = command.productId,
-            amount = command.amount,
-        )
+        val order = Order.of(command.userId, command.productId, command.amount)
         return orderRepository.save(order)
     }
 }

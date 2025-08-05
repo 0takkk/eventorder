@@ -11,6 +11,6 @@ class GetOrderQuery(
 ) : GetOrderQueryUseCase {
     override fun invoke(query: GetOrderQueryUseCase.Query): Order {
         return orderRepository.findById(query.id)
-            ?: throw OrderException(OrderErrorCode.NOT_FOUND_ORDER, "Not found order - id(${query.id})")
+            .orElseThrow { OrderException(OrderErrorCode.NOT_FOUND_ORDER, "Not found order - id(${query.id})") }
     }
 }
