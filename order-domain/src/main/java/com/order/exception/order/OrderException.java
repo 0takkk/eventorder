@@ -1,4 +1,4 @@
-package com.order.exception;
+package com.order.exception.order;
 
 public class OrderException extends RuntimeException {
 

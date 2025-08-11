@@ -1,8 +1,8 @@
 package com.order.usecase.`in`.query.impl
 
 import com.order.entity.Order
-import com.order.exception.OrderErrorCode
-import com.order.exception.OrderException
+import com.order.exception.order.OrderErrorCode
+import com.order.exception.order.OrderException
 import com.order.repository.OrderRepository
 import com.order.usecase.`in`.query.GetOrderQueryUseCase
 
