@@ -20,9 +20,14 @@ class CreateOrderCommand(
                 "Product is not available for order - status(${product.status}), productId(${command.productId})")
         }
 
-        // TODO : product 수량 체크
+        if(!product.stockQuantity.isAvailable(command.stockQuantity)) {
+            throw OrderException(OrderErrorCode.PRODUCT_STOCK_QUANTITY_NOT_AVAILABLE,
+                "Product stock is not available for order - requested(${command.stockQuantity}), available(${product.stockQuantity.value()}), productId(${command.productId})")
+        }
 
-        val order = Order.of(command.userId, command.productId, command.amount)
+        val totalAmount = product.userAmount.multiply(command.stockQuantity.value());
+
+        val order = Order.of(command.userId, command.productId, totalAmount)
         return orderRepository.save(order)
     }
 }

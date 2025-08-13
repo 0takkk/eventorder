@@ -1,7 +1,7 @@
 package com.order.entity;
 
-import com.order.common.vo.Money;
 import com.order.constant.OrderStatus;
+import com.order.common.vo.Money;
 import com.order.vo.OrderId;
 import com.order.vo.ProductId;
 import com.order.vo.UserId;
